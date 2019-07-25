@@ -56,33 +56,40 @@ Table 2 describes a set of functions that make use of the two’s complement rep
 | isLessOrEqual(x,y) | x <= y? | 3 | 24 |
 | ilog2(x) | Compute ⌊log2(x)⌋ | 4 | 90 |
 
-##Floating-Point Operations
+Table 2: Arithmetic Functions
+
+## Floating-Point Operations
 For this part of the assignment, you will implement some common single-precision floating-point operations. In this section, you are allowed to use standard control structures (conditionals, loops), and you may use both int and unsigned data types, including arbitrary unsigned and integer constants. You may not use any unions, structs, or arrays. Most significantly, you may not use any floating point data types, operations, or constants. Instead, any floating-point operand will be passed to the function as having type unsigned, and any returned floating-point value will be of type unsigned. Your code should perform the bit manipulations that implement the specified floating point operations.
 
 Table 3 describes a set of functions that operate on the bit-level representations of floating-point numbers. Refer to the comments in bits.c and the reference versions in tests.c for more information.
+
+
+| Name        | Description           | Rating  | Max Ops |
+| ------------- |:-------------:| -----:|-----:|
+| float_neg(uf) | Compute -f | 2 | 10 |
+| float_i2f(x) | Compute(float) x | 4 | 30 |
+| float_twice(uf) | Computer 2*f | 4 | 30 |
+
 Table 3: Floating-Point Functions. Value f is the floating-point number having the same bit representation as the unsigned integer uf.
-Functions float_neg and float_twice must handle the full range of possible argument values, in- cluding not-a-number (NaN) and infinity. The IEEE standard does not specify precisely how to handle NaN’s, and the IA32 behavior is a bit obscure. We will follow a convention that for any function returning a NaN value, it will return the one with bit representation 0x7FC00000.
+
+Functions float_neg and float_twice must handle the full range of possible argument values, including not-a-number (NaN) and infinity. The IEEE standard does not specify precisely how to handle NaN’s, and the IA32 behavior is a bit obscure. We will follow a convention that for any function returning a NaN value, it will return the one with bit representation 0x7FC00000.
 The included program fshow helps you understand the structure of floating point numbers. To compile fshow, switch to the handout directory and type:
-unix> make
+
+```bash
+$ make
+```
 You can use fshow to see what an arbitrary pattern represents as a floating-point number:
-  unix> ./fshow 2080374784
+
+```bash
+  $ ./fshow 2080374784
   Floating point value 2.658455992e+36
   Bit Representation 0x7c000000, sign = 0, exponent = f8, fraction = 000000
   Normalized.  1.0000000000 X 2ˆ(121)
-   Name
-Description
-  Rating
- Max Ops
-  float_neg(uf)
-float_i2f(x)
-float_twice(uf)
-    Compute -f Compute(float) x Computer 2*f
-  2 4 4
-     10 30 30
-    3
+```
 
 You can also give fshow hexadecimal and floating point values, and it will decipher their bit structure.
-5 Evaluation
+
+## Evaluation
 Your score will be computed out of a maximum of 76 points based on the following distribution:
 41 Correctness points. 30 Performance points. 5 Style points.
 Correctness points. The 15 puzzles you must solve have been given a difficulty rating between 1 and 4, such that their weighted sum totals to 41. We will evaluate your functions using the btest program, which is described in the next section. You will get full credit for a puzzle if it passes all of the tests performed by btest, and no credit otherwise.
@@ -96,9 +103,8 @@ We have included some autograding tools in the handout directory — btest, dlc,
 Notice that you must rebuild btest each time you modify your bits.c file.
 You’ll find it helpful to work through the functions one at a time, testing each one as you go. You can
 use the -f flag to instruct btest to test only a single function: unix> ./btest -f bitAnd
-4
 
-6
+
 You can feed it specific function arguments using the option flags -1, -2, and -3: unix> ./btest -f bitAnd -1 7 -2 0xf
 Check the file README for documentation on running the btest program.
 • dlc: This is a modified version of an ANSI C compiler from the MIT CILK group that you can use
@@ -111,12 +117,13 @@ for a list of command line options.
 • driver.pl: This is a driver program that uses btest and dlc to compute the correctness and performance points for your solution. It takes no arguments:
 unix> ./driver.pl
 Your instructors will use driver.pl to evaluate your solution.
-Handin Instructions
+## Handin Instructions
 SITE-SPECIFIC: Insert text here that tells each student how to hand in their bits.c solution file at your school.
-7 Advice
+
+## Advice
 • Don’t include the <stdio.h> header file in your bits.c file, as it confuses dlc and results in some non-intuitive error messages. You will still be able to use printf in your bits.c file for debugging without including the <stdio.h> header, although gcc will print a warning that you can ignore.
 • ThedlcprogramenforcesastricterformofCdeclarationsthanisthecaseforC++orthatisenforced by gcc. In particular, any declaration must appear in a block (what you enclose in curly braces) before any statement that is not a declaration. For example, it will complain about the following code:
-5
+
 
 int foo(int x)
       {
@@ -132,4 +139,3 @@ Nicknames are limited to 35 characters and can contain alphanumerics, apostrophe
 http://$SERVER_NAME:$REQUESTD_PORT
 SITE-SPECIFIC: Replace $SERVER_NAME and $REQUESTD_PORT with the values you
 set in the ./contest/Contest.pm file.
-6
