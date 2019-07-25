@@ -34,20 +34,14 @@ Table 1 describes a set of functions that manipulate and test sets of bits. The 
 
 | Name        | Description           | Rating  | Max Ops |
 | ------------- |:-------------:| -----:|-----:|
-| getByte(x,n) | x & y using only &#124; and ̃|1 | 8|
-
-<!-- logicalShift(x,n)
-bitCount(x)
-bang(x)
-
-Get byte n from x.
-Shift right logical.
-Count the number of 1’s in x. Compute !n without using ! operator.
-1 2 3 4 4
-8
-6 20 40 12 -->
+| bitAnd(x,y) | x & y using only &#124; and ̃|1 | 8|
+| getByte(x,n) |Get byte n from x. | 2 | 6|
+| logicalShift(x,n) | Shift right logical. | 3 |20|
+| bitCount(x)| Count the number of 1’s in x. | 4|40|
+| bang(x)| Compute !n without using ! operator. |4| 12|
 Table 1: Bit-Level Manipulation Functions.
-4.2 Two’s Complement Arithmetic
+
+## Two’s Complement Arithmetic
 Table 2 describes a set of functions that make use of the two’s complement representation of integers. Again, refer to the comments in bits.c and the reference versions in tests.c for more information.
 4.3 Floating-Point Operations
 For this part of the assignment, you will implement some common single-precision floating-point opera- tions. In this section, you are allowed to use standard control structures (conditionals, loops), and you may
