@@ -39,6 +39,7 @@ Table 1 describes a set of functions that manipulate and test sets of bits. The 
 | logicalShift(x,n) | Shift right logical. | 3 |20|
 | bitCount(x)| Count the number of 1’s in x. | 4|40|
 | bang(x)| Compute !n without using ! operator. |4| 12|
+
 Table 1: Bit-Level Manipulation Functions.
 
 ## Two’s Complement Arithmetic
