@@ -43,47 +43,22 @@ Table 1 describes a set of functions that manipulate and test sets of bits. The 
 Table 1: Bit-Level Manipulation Functions.
 
 ## Two’s Complement Arithmetic
-Table 2 describes a set of functions that make use of the two’s complement representation of integers. Again, refer to the comments in bits.c and the reference versions in tests.c for more information.
-4.3 Floating-Point Operations
-For this part of the assignment, you will implement some common single-precision floating-point opera- tions. In this section, you are allowed to use standard control structures (conditionals, loops), and you may
-   Name
-Description
-  Rating
- Max Ops
-  bitAnd(x,y)
-getByte(x,n)
-logicalShift(x,n)
-bitCount(x)
-bang(x)
-        x & yusingonly|and ̃
-Get byte n from x.
-Shift right logical.
-Count the number of 1’s in x. Compute !n without using ! operator.
-  1 2 3 4 4
-         8
-6 20 40 12
-      2
 
-   Name
-Description
-  Rating
- Max Ops
-  tmin()
-fitsBits(x,n)
-divpwr2(x,n)
-negate(x)
-isPositive(x)
-isLessOrEqual(x,y)
-ilog2(x)
-            Most negative two’s complement integer Does x fit in n bits?
-Compute x/2n
--x without negation
-x > 0?
-x <= y? Compute ⌊log2(x)⌋
-  1 2 2 2 3 3 4
-             4 15 15 5 8 24 90
-        Table 2: Arithmetic Functions
-use both int and unsigned data types, including arbitrary unsigned and integer constants. You may not use any unions, structs, or arrays. Most significantly, you may not use any floating point data types, operations, or constants. Instead, any floating-point operand will be passed to the function as having type unsigned, and any returned floating-point value will be of type unsigned. Your code should perform the bit manipulations that implement the specified floating point operations.
+Table 2 describes a set of functions that make use of the two’s complement representation of integers. Again, refer to the comments in bits.c and the reference versions in tests.c for more information.
+
+| Name        | Description           | Rating  | Max Ops |
+| ------------- |:-------------:| -----:|-----:|
+| tmin()| Most negative two’s complement integer| 1 | 4|
+| fitsBits(x,n) | Does x fit in n bits? | 2 | 15 |
+| divpwr2(x,n)| Compute x/2n| 2| 15|
+| negate(x) | -x without negation |2 | 5|
+| isPositive(x)|x > 0? |3 | 8 |
+| isLessOrEqual(x,y) | x <= y? | 3 | 24 |
+| ilog2(x) | Compute ⌊log2(x)⌋ | 4 | 90 |
+
+##Floating-Point Operations
+For this part of the assignment, you will implement some common single-precision floating-point operations. In this section, you are allowed to use standard control structures (conditionals, loops), and you may use both int and unsigned data types, including arbitrary unsigned and integer constants. You may not use any unions, structs, or arrays. Most significantly, you may not use any floating point data types, operations, or constants. Instead, any floating-point operand will be passed to the function as having type unsigned, and any returned floating-point value will be of type unsigned. Your code should perform the bit manipulations that implement the specified floating point operations.
+
 Table 3 describes a set of functions that operate on the bit-level representations of floating-point numbers. Refer to the comments in bits.c and the reference versions in tests.c for more information.
 Table 3: Floating-Point Functions. Value f is the floating-point number having the same bit representation as the unsigned integer uf.
 Functions float_neg and float_twice must handle the full range of possible argument values, in- cluding not-a-number (NaN) and infinity. The IEEE standard does not specify precisely how to handle NaN’s, and the IA32 behavior is a bit obscure. We will follow a convention that for any function returning a NaN value, it will return the one with bit representation 0x7FC00000.
