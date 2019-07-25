@@ -34,7 +34,7 @@ Table 1 describes a set of functions that manipulate and test sets of bits. The 
 
 | Name        | Description           | Rating  | Max Ops |
 | ------------- |:-------------:| -----:|-----:|
-| getByte(x,n) | ```x & y using only | and ̃```|1 | 8|
+| getByte(x,n) | x & y using only &#124; and ̃|1 | 8|
 
 <!-- logicalShift(x,n)
 bitCount(x)
