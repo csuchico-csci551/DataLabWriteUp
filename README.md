@@ -90,13 +90,20 @@ Normalized.  1.0000000000 X 2ˆ(121)
 You can also give fshow hexadecimal and floating point values, and it will decipher their bit structure.
 
 ## Evaluation
-Your score will be computed out of a maximum of 76 points based on the following distribution:
-41 Correctness points.
-30 Performance points.
+Your score will be computed out of a maximum of 96 points based on the following distribution:
+26 Correctness points.
+22 Performance points.
+48 Class Quiz points.
 
-* **Correctness points.** The 15 puzzles you must solve have been given a difficulty rating between 1 and 4, such that their weighted sum totals to 41. We will evaluate your functions using the btest program, which is described in the next section. You will get full credit for a puzzle if it passes all of the tests performed by btest, and no credit otherwise.
+* **Correctness points.** The 11 puzzles you must solve have been given a difficulty rating between 1 and 4, such that their weighted sum totals to 26. We will evaluate your functions using the btest program, which is described in the next section. You will get full credit for a puzzle if it passes all of the tests performed by btest, and no credit otherwise.
 
 * **Performance points.** Our main concern at this point in the course is that you can get the right answer. However, we want to instill in you a sense of keeping things as short and simple as you can. Furthermore, some of the puzzles can be solved by brute force, but we want you to be more clever. Thus, for each function we’ve established a maximum number of operators that you are allowed to use for each function. This limit is very generous and is designed only to catch egregiously inefficient solutions. You will receive two points for each correct function that satisfies the operator limit.
+
+* **Class Quiz Points.** 48 points or 50% of the assignment's grade will come from your ability to adequately explain the logic from some of your solutions in an in class quiz. This is done to prevent you from just copying solutions found online or from a friend, the explaination will need to be tied to the underlying nature of your solution and not the operations it takes. 
+
+### Extra Credit
+
+There are two floating point puzzles included which add 6 points of correctness and 4 points for performance points. If you are missing points from other puzzles they'll play into your overall 48 points from the puzzle's score; however, if you are beyond the 48 points they'll count as extra credit up to 10 total extra points on the assignment. 
 
 ### Autograding your work
 We have included some autograding tools in the handout directory — btest, dlc, and driver.pl — to help you check the correctness of your work.
@@ -161,7 +168,6 @@ To submit your entry to the contest, type:
 ```bash
 $ ./driver.pl -u ‘‘Your Nickname’’
 ```
-Nicknames are limited to 35 characters and can contain alphanumerics, apostrophes, commas, periods, dashes, underscores, and ampersands. You can submit as often as you like. Your most recent submission will appear on a real-time scoreboard, identified only by your nickname. You can view the scoreboard by pointing your browser at
-http://$SERVER_NAME:$REQUESTD_PORT
-SITE-SPECIFIC: Replace $SERVER_NAME and $REQUESTD_PORT with the values you
-set in the ./contest/Contest.pm file.
+Nicknames are limited to 35 characters and can contain alphanumerics, apostrophes, commas, periods, dashes, underscores, and ampersands. You can submit as often as you like. Your most recent submission will appear on a real-time scoreboard, identified only by your nickname. You can view the scoreboard by pointing your browser at:
+
+[https://datalab1.bryancdixon.com/](https://datalab1.bryancdixon.com/)
